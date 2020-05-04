@@ -14,9 +14,8 @@
         <div class="container">
           <h2 class="title">Rough Timeline for Major Deliverables</h2>
           <h4>
-            Below is the general timeline regarding the major deadlines for this
-            project. While it is not absolute, it is a good estimation of our
-            expected completion dates.
+            Below is the general timeline we used for completing the implementation for our project. 
+            It includes all of the major deadlines we followed for this project.
           </h4>
           <br />
           <div class="md-layout">
@@ -32,20 +31,13 @@
             <div class="text-center lg-text">
               <br />
               <br />
-              Our tentative schedule for this capstone project is split up into
-              two different semesters. The first semester is the planning phase
-              of our project and the second semester is the implementation
-              phase. We have just finished the planning phase by completing our
-              technical feasibility document, requirements acquisition, and our
-              technical demo. Visit our
-              <a href="#/documents">documents page</a> to learn more. We will
-              begin the implementation phase of our project by implementing our
-              virtual planetary mapping application using Leaflet. We will then
-              connect our mapping application with Jupyter Notebooks. After
-              these steps are completed, we can begin implementing stretch goal
-              features and testing our Leaflet application. We will fix bugs
-              along the way and deliver our final project to USGS in the
-              beginning of May.
+              The schedule we followed for this capstone project was split up into two different semesters. 
+              Our first semester was the planning phase of our project and the second semester was the implementation 
+              phase of our project. We have just finished all of our testing phases by completing our in 
+              house and user testing.
+              Visit our <a href="#/documents">documents page</a> to learn more about how we 
+              implemented and structured our capstone project. We will be delivering our 
+              project to USGS at the end of the week. 
             </div>
           </div>
         </div>
@@ -65,11 +57,11 @@ export default {
     },
     ganttTp: {
       type: String,
-      default: require("@/assets/img/Gantt_Chart_Transparent.png"),
+      default: require("@/assets/img/Gantt_Chart_Bg.JPG"),
     },
     ganttBg: {
       type: String,
-      default: require("@/assets/img/Gantt_Chart_Bg.png"),
+      default: require("@/assets/img/Gantt_Chart_Bg.JPG"),
     },
   },
   computed: {
