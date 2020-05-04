@@ -41,8 +41,7 @@
                         computer science in May of 2020. Kaitlyn currently works
                         at the United States Geological Survey as a Software
                         Developer. She enjoys programming, playing games with
-                        friends and family, watching soccer, playing basketball,
-                        and learning about our solar system.
+                        friends and family, and learning about our solar system.
                       </p>
                     </md-card-content>
 
@@ -79,8 +78,7 @@
                       Scott Ames
                       <br />
                       <small class="card-description text-muted"
-                        >Release Manager/Website Manager/Front-end
-                        Developer</small
+                        >Web-developer/Front-end Developer</small
                       >
                     </h4>
 
@@ -89,7 +87,7 @@
                         Scott was born and raised in Temecula, CA, and is a
                         computer science major set to graduate in May of 2020.
                         He currently works at Northern Arizona University as a
-                        Teacher's Assistant for the School of Infomatics,
+                        Teacher's Assistant for the School of Informatics,
                         Computing, and Cyber Systems. His professional
                         experience includes full stack web development and
                         backend services. In his free time, he enjoys planetary

@@ -30,20 +30,22 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-50 md-xsmall-size-100">
               <div class="vertical-align-text">
-                An important part of space exploration is collecting large
-                amounts of data and taking images of planetary bodies.
-                Scientists then create maps of these bodies by using the images
-                and data collected. These maps play a crucial role in learning
-                more about a body and its surface. For example, the USGS
-                Astrogeology Science Center (ASC) helped create the maps used
-                for the Apollo 11 mission, and you can see an example on the
-                right.
+                For decades, planetary scientists have been studying space and
+                its unknowns. These scientists complete important research on
+                planetary bodies including planets, moons, and asteroids. In
+                order to study these bodies, the scientists first have to create
+                maps of the bodies. Our clients, Trent Hare and Scott Akins of
+                the United States Geological Survey (USGS), work alongside these
+                scientists and help with the map-making process.
+                <a href="/#/team">Learn more about them here.</a> <br /><br />
+                These maps are very important for the future of space
+                exploration. For example, the USGS Astrogeology Science Center
+                (ASC) helped create the maps used for the Apollo 11 mission, and
+                you can see an example on the right.
                 <br /><br />
-                Our client is a small team from the USGS consisting of Trent
-                Hare and Scott Akins.
-                <a href="/#/team">Learn more about them here.</a>
-                They both work for the ASC, where both developers and scientists
-                work together to support the planetary science community.
+                Currently, no tool exists that allow the scientists to view and
+                interact with their maps with all the functionality needed to
+                complete their research.
               </div>
             </div>
             <div
@@ -70,9 +72,16 @@
                   'Issues',
                   'Solution',
                   'Requirements',
+                  'Architecture',
                   'Technologies',
                 ]"
-                :tab-icon="['report_problem', 'check_circle', 'list', 'apps']"
+                :tab-icon="[
+                  'report_problem',
+                  'check_circle',
+                  'list',
+                  'table_chart',
+                  'apps',
+                ]"
                 plain
                 nav-pills-icons
                 color-button="primary"
@@ -81,30 +90,54 @@
                   <div class="text-center lg-text">
                     <div class="md-layout">
                       <div class="md-layout-item md-size-50 md-xsmall-size-100">
-                        Scientists have many different applications that aid
-                        them in the map-making process; however, there are not
-                        many interactive tools they can use to view maps. It is
-                        very important that these scientists have a mapping
-                        application they can use to complete their research.
-                        Currently, there are a few mapping applications that
-                        they may use, but there are problems with them:
+                        Currently, there are a few map-viewing tools that
+                        scientists may use to view and interact with their maps,
+                        but they miss a few key features:
 
                         <ul class="text-left">
-                          <li>They only support maps of Earth</li>
                           <li>
-                            They do not allow users to change their latitude and
-                            longitude settings
+                            Cannot view maps of bodies other than Earth.
                           </li>
                           <li>
-                            They do not allow users to change what projection
-                            the current map is in
+                            Cannot view a body in multiple projections.
+                          </li>
+                          <li>
+                            Cannot view the coordinate of the mouse.
+                          </li>
+                          <li>
+                            Cannot change the latitude and longitude (lat/lon)
+                            settings of the mouse coordinate.
+                          </li>
+                          <li>
+                            Cannot draw polygons on the map to highlight
+                            features on the map.
                           </li>
                         </ul>
 
-                        USGS has a mapping application that scientists can use,
-                        which can be seen to the right, but it is outdated. USGS
-                        wants to update this application, but the code itself is
-                        not modular, making it difficult to update.
+                        In order to solve the problems mentioned above, the USGS
+                        developers implemented a map-viewing application using
+                        the open-source mapping API OpenLayers (OL). We can see
+                        a picture of it to the right. However, the OL
+                        implementation has a few problems of its own:
+                        <ul class="text-left">
+                          <li>
+                            It uses OL version 2, released in 2006.
+                          </li>
+                          <li>
+                            It is not modular.
+                          </li>
+                        </ul>
+                        Because the implementation is 13 years old and not
+                        modular, it is difficult for the development team to
+                        update it. This also makes it difficult to use their
+                        code in other mapping applications. Finally, there is
+                        one other problem for both the scientists and the
+                        developers. The developers may fix and update their OL
+                        implementation, but there is still just one map-viewing
+                        application scientists can use. The USGS wants to be
+                        able to support more scientists by creating more
+                        map-viewing applications that will have the
+                        functionality needed by the scientists.
                       </div>
                       <div class="md-layout-item md-size-50 md-xsmall-size-100">
                         <span class="img-helper"></span>
@@ -129,37 +162,48 @@
                   <div class="md-layout">
                     <div class="md-layout-item md-size-70 md-xsmall-size-100">
                       <div class="text-center lg-text-2">
-                        Our envisioned solution is to build a new interactive
-                        map that contains the extra functionality needed by the
-                        USGS scientists.
-                        <br />
-                        <br />
-                        We will use Leaflet, an open-source mapping package, to
-                        build our map. This Leaflet implementation will support
-                        more bodies than just Earth, will be able to swap
-                        projections, and will display the mouse's latitude and
-                        longitude. In order to support more projections, we will
-                        be using a library called PROJ that is widely-supported
-                        by the planetary science community. This library allows
-                        users to define projections and easily transform between
-                        them. Our diagram on the right demonstrates that we will
-                        be using PROJ to transform the map into its correct
-                        projection. Because we are using PROJ, we will not need
-                        to write and test our own code.
-                        <br />
-                        <br />
-                        Our implementation will also contain a new, modern GUI
-                        with front-end functionality connecting the latitude and
-                        longitude and projection swapper. It will also allow
-                        users to zoom, move around the map, display all the USGS
-                        maps, and display surface features on the map.
-                        <br />
-                        <br />
-                        Alongside this map, we will create a modular package
-                        that contains the back-end for the added functionality
-                        described above. Since this package will be modular, it
-                        will be able to be used in any mapping tool, including
-                        USGS's current outdated one.
+                        Our solution, which aims to solve both the problems of
+                        the developers and scientists, was to create a
+                        cross-platform, map-viewing web application. It can be
+                        used in a web browser or in a Jupyter Notebook and a
+                        picture of it can be seen to the right. We have solved
+                        the problems mentioned previously by adding the ability
+                        to:
+                        <ul class="text-left">
+                          <li>
+                            Allow users to view all bodies supported by the
+                            USGS.
+                          </li>
+                          <li>
+                            Contain lat/lon buttons to change the lat/lon
+                            settings.
+                          </li>
+                          <li>
+                            Allow users to change the projection of the map.
+                          </li>
+                          <li>
+                            Contain buttons to draw polygons on the map.
+                          </li>
+                          <li>
+                            Contain a new interactive map built with Leaflet, an
+                            open-source mapping package, wrapped in a new modern
+                            graphical user interface (GUI).
+                          </li>
+                          <li>
+                            Contain a module that wraps the projection and
+                            lat/lon back-end code for use in other mapping
+                            applications.
+                          </li>
+                        </ul>
+                        <strong>Note:</strong> We will not be using OL in our
+                        solution. Instead, the OL implementation the USGS
+                        currently has will eventually use solution #6 when the
+                        USGS decides to update their solution. <br /><br />
+                        In addition, we will be implementing a search bar with
+                        an auto-complete function to search for a named feature
+                        on a body and open a USGS website with more information
+                        on that body. For example, if a user wanted to get more
+                        information about Olympus Mons on Mars.
                       </div>
                     </div>
                     <div class="md-layout-item md-size-30 md-xsmall-size-100">
@@ -167,7 +211,7 @@
                         :src="solutionPic"
                         alt="Thumbnail Image"
                         class="img rounded"
-                        style="height:auto; width:90%;"
+                        style="height:auto; width:auto;"
                       />
                     </div>
                   </div>
@@ -175,38 +219,60 @@
                 <template slot="tab-pane-3">
                   <div class="text-center lg-text">
                     Through bi-weekly meetings with the USGS team and Gitter
-                    messages/emails, we have aqcuired the requirements of this
-                    project.
-                    <br />
-                    <br />
-                    From a user-level perspective, we have identified three
-                    domain-level requirements that our project needs to satisfy:
-
-                    <ol class="text-left">
+                    messages/emails, we aqcuired both functional and
+                    non-function requirements. Here is a list of the high-level
+                    ones:
+                    <ul class="text-left">
                       <li>
                         We must deliver an application that displays planetary
                         data through an interactive viewer that is embedded in a
-                        web-based environment.
+                        web-based environment using Leaflet.
                       </li>
                       <li>
-                        The application must accomplish the primary goal of
-                        being research-driven in nature.
+                        The application must be programmed in JavaScript and
+                        Python.
                       </li>
                       <li>
-                        We must create a portable package that can be used
-                        across multiple mapping applications.
+                        The codebase needs to be modular for easy updates.
                       </li>
                       <li>
-                        We must ensure that the application’s scale bar and zoom
-                        feature is providing accurate data for each target.
+                        The application needs to be compatible with most web
+                        browsers and Jupyter Notebooks
                       </li>
-                    </ol>
+                    </ul>
                     You can see more in depth requirements for the project in
                     our requirements document
                     <a href="#/documents">located here.</a>
                   </div>
                 </template>
                 <template slot="tab-pane-4">
+                  <div class="md-layout">
+                    <div class="md-layout-item md-size-70 md-xsmall-size-100">
+                      <div class="text-center lg-text-2">
+                        Our project can be broken up into three separate
+                        components: Jupyter Notebook, the App, and the
+                        AutoComplete module. The web based App is our JavaScript
+                        Leaflet implementation. It contains two submodules, the
+                        Astro package, which is the back-end, and the GUI, the
+                        front-end. The Jupyter Notebook module is our Python
+                        implementation with example notebooks to be used by
+                        scientists. The AutoComplete module contains the code to
+                        search for a named feature on a body. You can see a
+                        picture of the architecture to the left. Check out our
+                        As-Built document for more information.
+                      </div>
+                    </div>
+                    <div class="md-layout-item md-size-30 md-xsmall-size-100">
+                      <img
+                        :src="architecturePic"
+                        alt="Thumbnail Image"
+                        class="img rounded"
+                        style="height:auto; width:auto;"
+                      />
+                    </div>
+                  </div>
+                </template>
+                <template slot="tab-pane-5">
                   <div class="team text-center">
                     <div class="md-layout">
                       <div
@@ -407,10 +473,6 @@ export default {
       type: String,
       default: require("@/assets/img/babel-logo.svg"),
     },
-    /* pythonLogo: {
-      type: String,
-      default: require("https://www.python.org/static/community_logos/python-logo-generic.svg"),
-    }, */
     materialLogo: {
       type: String,
       default: require("@/assets/img/materialLogo.png"),
@@ -418,6 +480,10 @@ export default {
     mochaLogo: {
       type: String,
       default: require("@/assets/img/mochaLogo.png"),
+    },
+    architecturePic: {
+      type: String,
+      default: require("@/assets/img/architecture.png"),
     },
   },
   computed: {
