@@ -221,6 +221,16 @@
                       ></object>
                     </template>
                     <template slot="tab-pane-5" class="pdf-container">
+                      <div class="text-center lg-text">
+                        The UGRADS symposium is the final presentation for this
+                        project. It is the accumulation of a year worth of work
+                        on this project, and details the inner workings of this
+                        project.
+                      </div>
+                      <object
+                        data="./UgradsPresentation.pdf"
+                        type="application/pdf"
+                      ></object>
                     </template>
                   </tabs>
                 </div>

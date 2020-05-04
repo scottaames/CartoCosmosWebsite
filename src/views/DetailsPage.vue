@@ -282,6 +282,83 @@
                         </div>
                       </div>
                     </div>
+                    <div class="md-layout">
+                      <div
+                        class="md-layout-item md-medium-size-33 md-small-size-100"
+                      >
+                        <div class="team-player">
+                          <md-card class="md-card-plain">
+                            <div class="md-layout-item md-size-100 mx-auto">
+                              <img
+                                :src="materialLogo"
+                                alt="Thumbnail Image"
+                                class="rounded img-fluid material-pic"
+                              />
+                            </div>
+                            <h4 class="card-title">Material UI</h4>
+                            <md-card-content>
+                              <p class="card-description">
+                                Material UI is a React front-end framework with
+                                a large library of reusable UI components
+                                created by Google. It enabled us to create a
+                                modern and user-friendly GUI.
+                              </p>
+                            </md-card-content>
+                          </md-card>
+                        </div>
+                      </div>
+                      <div
+                        class="md-layout-item md-medium-size-33 md-small-size-100"
+                      >
+                        <div class="team-player">
+                          <md-card class="md-card-plain">
+                            <div class="md-layout-item md-size-100 mx-auto">
+                              <img
+                                src="https://www.python.org/static/community_logos/python-logo-generic.svg"
+                                alt="Thumbnail Image"
+                                class="rounded img-fluid python-pic
+                              "
+                              />
+                            </div>
+                            <h4 class="card-title">Python</h4>
+                            <md-card-content>
+                              <p class="card-description">
+                                Our Jupyter Notebooks implementation of
+                                Leaflet-Planetary is a Python codebase,
+                                leveraging its excellent data analysis tools.
+                              </p>
+                            </md-card-content>
+                          </md-card>
+                        </div>
+                      </div>
+                      <div
+                        class="md-layout-item md-medium-size-33 md-small-size-100"
+                      >
+                        <div class="team-player">
+                          <md-card class="md-card-plain">
+                            <div class="md-layout-item md-size-100 mx-auto">
+                              <img
+                                :src="mochaLogo"
+                                alt="Thumbnail Image"
+                                class="rounded img-fluid mocha-pic"
+                              />
+                            </div>
+                            <h4 class="card-title">Mocha</h4>
+                            <md-card-content>
+                              <p class="card-description">
+                                Mocha is a feature-rich JavaScript test
+                                framework running on Node.js and in the browser,
+                                making asynchronous testing. Mocha tests run
+                                serially, allowing for flexible and accurate
+                                reporting, while mapping uncaught exceptions to
+                                the correct test cases. We used Mocha for all of
+                                our testing needs.
+                              </p>
+                            </md-card-content>
+                          </md-card>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </template>
               </tabs>
@@ -329,6 +406,18 @@ export default {
     babelLogo: {
       type: String,
       default: require("@/assets/img/babel-logo.svg"),
+    },
+    /* pythonLogo: {
+      type: String,
+      default: require("https://www.python.org/static/community_logos/python-logo-generic.svg"),
+    }, */
+    materialLogo: {
+      type: String,
+      default: require("@/assets/img/materialLogo.png"),
+    },
+    mochaLogo: {
+      type: String,
+      default: require("@/assets/img/mochaLogo.png"),
     },
   },
   computed: {
@@ -396,6 +485,19 @@ ol.text-left {
   padding-top: 25px;
   height: 100%;
   //width: 100%;
+}
+.material-pic {
+  width: 70%;
+}
+
+.python-pic {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.mocha-pic {
+  width: 70%;
 }
 
 .lg-text {

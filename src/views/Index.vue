@@ -4,7 +4,9 @@
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="brand">
-            <h1 class="title text-center">CartoCosmos</h1>
+            <h1 class="title text-center">
+              CartoCosmos
+            </h1>
             <h2 class="text-center">
               Leaflet Plugin for Planetary Mapping
             </h2>
@@ -149,6 +151,10 @@ export default {
       type: String,
       default: require("@/assets/img/mars-bg.jpg"),
     },
+    logo: {
+      type: String,
+      default: require("@/assets/img/cartocosmos-logo.svg"),
+    },
   },
   computed: {
     headerStyle() {
@@ -161,6 +167,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo-svg {
+  height: 5rem;
+  fill: white;
+}
+
 .page-header {
   max-height: 66vh;
   background-color: black;

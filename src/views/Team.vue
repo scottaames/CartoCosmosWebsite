@@ -30,7 +30,7 @@
                       Kaitlyn Lee
                       <br />
                       <small class="card-description text-muted"
-                        >Team Lead/Customer Communicator</small
+                        >Team Lead/Back-end Developer</small
                       >
                     </h4>
 
@@ -79,7 +79,8 @@
                       Scott Ames
                       <br />
                       <small class="card-description text-muted"
-                        >Release Manager/Website Manager</small
+                        >Release Manager/Website Manager/Front-end
+                        Developer</small
                       >
                     </h4>
 
@@ -132,7 +133,7 @@
                       Jacob Kaufman
                       <br />
                       <small class="card-description text-muted"
-                        >Recorder/Architect</small
+                        >Back-end Developer/Python Developer</small
                       >
                     </h4>
 
