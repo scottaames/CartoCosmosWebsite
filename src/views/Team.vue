@@ -30,7 +30,7 @@
                       Kaitlyn Lee
                       <br />
                       <small class="card-description text-muted"
-                        >Team Lead/Customer Communicator</small
+                        >Team Lead/Back-end Developer</small
                       >
                     </h4>
 
@@ -41,8 +41,7 @@
                         computer science in May of 2020. Kaitlyn currently works
                         at the United States Geological Survey as a Software
                         Developer. She enjoys programming, playing games with
-                        friends and family, watching soccer, playing basketball,
-                        and learning about our solar system.
+                        friends and family, and learning about our solar system.
                       </p>
                     </md-card-content>
 
